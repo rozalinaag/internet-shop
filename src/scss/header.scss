@@ -2,8 +2,78 @@
 
 //====================================================================================================
 
-//Burger
-/*
+.header {
+
+	&__top {
+		background-color: $mainDarkColor;
+		color: #fff;
+
+	}
+
+	&__body {
+	}
+
+	&__catalog {
+	}
+}
+.top-header {
+	padding: 10px 0;
+	font-family: 'Montserrat', Arial, sans-serif;
+	&__container {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		min-height: 50px;
+	}
+
+	&__menu {
+		flex: 1 1 auto;
+	}
+
+	&__user {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 600;
+		line-height: math.div(22, 18);
+		&::before{
+			font-size: rem(28);
+			margin-right: em(15, 28);
+		}
+	}
+}
+.menu {
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		row-gap: 5px;
+		@include adaptiveValue("column-gap", 60, 20);
+	}
+
+	&__item {
+	}
+
+	&__link {
+		font-size: rem(16);
+		line-height: math.div(20, 16);
+	}
+	
+}
+.icon-menu {
+}
+
+.body-header {
+}
+.catalog-header {
+}
+
+
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
@@ -22,7 +92,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #fff;
 		}
 		&::before {
 			top: 0;
@@ -51,4 +121,3 @@
 		}
 	}
 }
-*/
