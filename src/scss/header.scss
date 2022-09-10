@@ -17,13 +17,13 @@
 	}
 }
 .top-header {
-	padding: 10px 0;
+	padding: rem(10) 0;
 	font-family: 'Montserrat', Arial, sans-serif;
 	&__container {
 		display: flex;
 		align-items: center;
-		gap: 20px;
-		min-height: 50px;
+		gap: rem(20);
+		min-height: rem(50);
 	}
 
 	&__menu {
@@ -65,21 +65,161 @@
 	}
 	
 }
-.icon-menu {
-}
 
+.header {
+
+	&__body {
+	}
+}
 .body-header {
+	padding: rem(10) 0;
+	background-color: #ECF1F2;
+
+	&__container {
+		display: flex;
+		min-height:  rem(70);
+		align-items: center
+	}
+
+	&__logo {
+		@extend %ic;
+		@extend ._icon-logo;
+		font-size: rem(42);
+		color: $mainDarkColor;
+	}
+
+	&__search {
+		@include adaptiveValue("padding-left", 158, 0); 
+		padding-right: rem(20);
+		flex: 1 1 auto;
+	}
+
+	&__actions {
+	}
 }
-.catalog-header {
+.search-header {
+	max-width: rem(377);
+	background-color: rgba(7, 7, 7, 0.03);
+	border-radius:  rem(3);
+	position: relative;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	color: rgba(0, 0, 0, 0.5);
+	&__button {
+		position: absolute;
+		background-color: transparent;
+		height: rem(41);
+		width:  rem(41);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 0;
+		left:rem(8);
+		font-size: rem(15);
+		color: rgba(0, 0, 0, 0.5);
+	}
+
+	&__input {
+		width: 100%;
+		height:  rem(41);
+		padding: 0 rem(20) 0 rem(50);
+		background-color: transparent;
+		border-radius:  rem(3);
+		color: rgba(0, 0, 0, 0.5);
+	}
 }
 
+.actions-header {
+	display: flex;
+	align-items: center;
+	column-gap: rem(30);
+	&__location {
+		display: inline-flex;
+		align-items: center;
+		font-weight: 600;
+		margin: 0px rem(25) 0px 0px;
+		&::before{
+			font-size: rem(24);
+			margin: 0px em(10, 25) 0px 0px;
+		}
+	}
+
+	&__phones {
+	}
+
+	&__favorite {
+	}
+
+	&__cart {
+	}
+}
+
+.phones-header {
+
+	&__items {
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+	}
+
+	&__phone {
+		font-weight: 600;
+		white-space: nowrap;
+		line-height: math.div(22, 18);
+	}
+
+	&__arrow {
+		color: #e8aa31;
+		font-size: rem(10);
+		transition: transform 0.3s ease 0s;
+		margin: 0 0 0 em(17, 16);	
+		&._spoller-active{
+			transform: rotate(-180deg);
+		}
+	}
+
+	&__list {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		left: 0;
+		border-radius: rem(10);
+		background-color: #fff;
+		margin: rem(5) 0 0 0 ;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+		padding: rem(11);
+		li{
+			&:not(:last-child){
+				margin-bottom: em(5, 18);
+			}
+		}
+	}
+
+	&__callback {
+	}
+}
+.cart-header {
+
+	&__icon {
+	}
+
+	&__body {
+	}
+
+	&__summ {
+	}
+
+	&__link {
+	}
+}
 
 .icon-menu {
 	display: none;
 	@media (max-width: $mobile) {
 		display: block;
 		position: relative;
-		width: rem(30);
+		flex: 0 0 30px;
 		height: rem(18);
 		cursor: pointer;
 		z-index: 5;
