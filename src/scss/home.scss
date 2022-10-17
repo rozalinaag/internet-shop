@@ -10,6 +10,9 @@
   &__body {
     display: grid;
     grid-template-columns: 1fr percent(635, 1600);
+    &:not(:last-child){
+      @include adaptiveValue("margin-bottom", 43, 30)
+    }
   }
 
   &__slider {
@@ -76,6 +79,8 @@
 
 .main-block-main{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .media-main-block {
 
@@ -173,15 +178,23 @@
   }
 }
 .adventages-main {
+
 }
 .advantages-main {
+  
 
   &__item {
+    width: 60%;
+    text-align: center;
   }
 
   &__icon {
   }
 
   &__text {
+    margin-top: 15px;
+    color: white;
+    line-height: 1.5;
+    font-size: 20px;
   }
 }
